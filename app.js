@@ -6,6 +6,7 @@ const handleWeightBalance = () => {
 
   const firstTwoWeight = document.getElementById("firstTwoWeight").value;
   const weightList = document.getElementById("weightList").value;
+
   if(firstTwoWeight !== "" && weightList === "") {
     document.getElementById("weightList").style.border = "1px solid red"; 
     return result.innerHTML = "The Weight List Elements is a required field";
@@ -15,10 +16,9 @@ const handleWeightBalance = () => {
      document.getElementById("firstTwoWeight").style.border = "1px solid red"; 
     return result.innerHTML = "The First two weight is a required field";
   } 
-  if (firstTwoWeight <= 0)
+  if (isNaN(firstTwoWeight) || isNaN(weightList)) return result.innerHTML = "Your input should be in number"
+  if (firstTwoWeight <= 0 || weightList <= 0 )
     return (result.innerHTML = "Only positive integer weights are allowed");
-    if (weightList <= 0 )
-    return (result.innerHTML = "Only positive integer weights List are allowed");
   if (firstTwoWeight.length < 2 || firstTwoWeight.length > 2)
     return (result.innerHTML =
       "The first element of the scale can only contain 2 weights");
