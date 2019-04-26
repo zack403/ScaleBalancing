@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Scale Balancing App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="balance.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  </head>
+
+  <body>
+        <div class="wrap">
+
+        <h1 >SCALE BALANCING</h1>
+  
+        <h3 class="">Input two positive integer weight values in the first input box and a list of positive weights in the second one below!</h3>
+        <label>First Two Weight</label>
+        <input  oninput="" type="text" id="firstTwoWeight" min="0" class="margin input" required placeholder="Type First two numbers">
+        <label>Weight List</label>
+        <input oninput="" type="text" id="weightList" min="0" class="margin input" required placeholder="Type List of numbers">
+
+        <div class="activeText" id="active"></div>
+        <button id="btn" class="margin button btnColor" onclick="handleWeightBalance()">Calculate Weight Balance</button>
+    <div class=" result" id="result"></div>
+
+  </div>
+  </body>
+</html>
