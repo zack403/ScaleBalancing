@@ -46,18 +46,21 @@ const resetFields = () => {
 }
 
 const validateUserInput = (firstTwoWeight, weightList, result) => {
+  const firstInput = document.getElementById("firstTwoWeight"); 
+  const secondInput =  document.getElementById("weightList"); 
+
   if(firstTwoWeight === "" && weightList === "") {
-    document.getElementById("firstTwoWeight").style.border = "1px solid red"; 
-    document.getElementById("weightList").style.border = "1px solid red"; 
+    firstInput.style.border = "1px solid red";;
+    secondInput.style.border = "1px solid red";;
     return result.innerHTML = "The Fields are required";
   }
   if(firstTwoWeight !== "" && weightList === "") {
-    document.getElementById("weightList").style.border = "1px solid red"; 
+    secondInput.style.border = "1px solid red";;
     return result.innerHTML = "The Weight List Elements is a required field";
   } 
   if(weightList !== "" && firstTwoWeight === "")
   {
-     document.getElementById("firstTwoWeight").style.border = "1px solid red"; 
+    firstInput.style.border = "1px solid red";;
     return result.innerHTML = "The First two weight is a required field";
   } 
   if (isNaN(firstTwoWeight) || isNaN(weightList)) return result.innerHTML = "Your input should be in number"
