@@ -46,7 +46,11 @@ const resetFields = () => {
 }
 
 const validateUserInput = (firstTwoWeight, weightList, result) => {
-  
+  if(firstTwoWeight === "" && weightList === "") {
+    document.getElementById("firstTwoWeight").style.border = "1px solid red"; 
+    document.getElementById("weightList").style.border = "1px solid red"; 
+    return result.innerHTML = "The Fields are required";
+  }
   if(firstTwoWeight !== "" && weightList === "") {
     document.getElementById("weightList").style.border = "1px solid red"; 
     return result.innerHTML = "The Weight List Elements is a required field";
